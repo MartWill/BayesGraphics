@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" onMouseEntered="#opcaoPaneOn" onMouseExited="#opcaoPaneOFF" prefHeight="200.0" prefWidth="100.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="componentes.linha.linhaGraficosController">
+   <children>
+      <StackPane>
+         <children>
+            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label fx:id="titleGeral" alignment="CENTER" contentDisplay="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="89.0" text="TITLE" textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <HBox fx:id="linhaGrafico" spacing="20.0">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets left="10.0" right="10.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox fx:id="opcaoPane" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" visible="false">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#copiarButton" prefHeight="25.0" prefWidth="52.0" text="copiar" />
+                  <Button mnemonicParsing="false" onAction="#salvarOneButton" prefHeight="25.0" prefWidth="74.0" text="salvar .png">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#salvarTwoButton" text="salvar .svg" />
+               </children>
+            </VBox>
+         </children>
+      </StackPane>
+   </children>
+</VBox>

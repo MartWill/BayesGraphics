@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="telas.inicializacao.inicializacaoController">
+   <children>
+      <Pane layoutX="50.0" prefWidth="600.0" style="-fx-background-color: #151a2e;">
+         <children>
+            <VBox layoutX="35.0" layoutY="13.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="403.0" prefWidth="555.0">
+               <children>
+                  <Label prefHeight="29.0" prefWidth="550.0" text="BAYES GRAPHICS" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Times New Roman Bold" size="30.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label prefHeight="47.0" prefWidth="530.0" text="Software de criação e analise de Redes Bayesianas, com o foco na visualização das correlações entre os atributos de entrada e o atributo alvo." textAlignment="JUSTIFY" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font name="Times New Roman" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label text="NAIVE BAYES" textFill="WHITE">
+                     <font>
+                        <Font name="Times New Roman" size="25.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label prefHeight="71.0" prefWidth="530.0" text="É um algoritmo simples de classificação, que utiliza dados históricos para prever a classificação de um novo dado. Calcula a probabilidade de um evento ocorrer dado que outro evento já ocorreu." textAlignment="JUSTIFY" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font name="Times New Roman" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="31.0" prefWidth="500.0" text="PASSOS PARA CRIAÇÃO" textFill="WHITE">
+                     <font>
+                        <Font name="Times New Roman" size="25.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label text="- Escolher o arquivo da base de dados. " textFill="WHITE">
+                     <font>
+                        <Font name="Times New Roman" size="15.0" />
+                     </font></Label>
+                  <Label text="- Selecionar a VARIAVEL alvo de estudo." textFill="WHITE">
+                     <font>
+                        <Font name="Times New Roman" size="15.0" />
+                     </font></Label>
+                  <Label prefHeight="18.0" prefWidth="554.0" text="- Escolher o VALOR da variavel alvo, no qual deseja inferir para a rede bayesiana." textFill="WHITE">
+                     <font>
+                        <Font name="Times New Roman" size="15.0" />
+                     </font></Label>
+                  <Label text="- Apertar o botão &quot;GERAR ANALISE&quot;" textFill="WHITE">
+                     <font>
+                        <Font name="Times New Roman" size="15.0" />
+                     </font></Label>
+               </children>
+            </VBox>
+            <HBox alignment="CENTER" layoutX="345.0" layoutY="371.0" prefHeight="71.0" prefWidth="248.0">
+               <children>
+                  <ImageView fitHeight="64.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                     <image>
+                        <Image url="@/imgs/logo_ufpa.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="52.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                     <image>
+                        <Image url="@/imgs/fs-logo.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+         </children>
+      </Pane>
+      <Pane layoutX="50.0" prefWidth="400.0">
+         <children>
+            <VBox alignment="CENTER" layoutX="50.0" layoutY="20.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="108.0" prefWidth="300.0">
+               <children>
+                  <Label text="Escolha o conjunto de dados (.csv) :" textFill="#151a2e">
+                     <font>
+                        <Font name="Times New Roman" size="15.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <TextField fx:id="dirLabel" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="200.0">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </TextField>
+                        <Button mnemonicParsing="false" onAction="#ActionEscolher" style="-fx-background-color: #151a2e;" text="ESCOLHER" textFill="WHITE">
+                           <font>
+                              <Font name="Times New Roman" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="50.0" layoutY="162.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="147.0" prefWidth="300.0">
+               <children>
+                  <Label text="Escolha a VARIAVEL de estudo:" textFill="#151a2e">
+                     <font>
+                        <Font name="Times New Roman" size="15.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <ComboBox fx:id="variavelBox" onAction="#ActionVariavelBox" prefWidth="150.0" promptText="Variaveis">
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </ComboBox>
+                  <Label text="Escolha o VALOR para ser inferido:" textFill="#151a2e">
+                     <font>
+                        <Font name="Times New Roman" size="15.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <ComboBox fx:id="valorBox" prefWidth="150.0" promptText="Valores" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="50.0" layoutY="145.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1.0" prefWidth="300.0" style="-fx-background-color: #151a2e;" />
+            <Button layoutX="117.0" layoutY="373.0" mnemonicParsing="false" onAction="#ActionGerarAnalise" style="-fx-background-color: #151a2e;" text="GERAR ANALISE" textFill="WHITE">
+               <font>
+                  <Font name="Times New Roman" size="18.0" />
+               </font>
+            </Button>
+            <VBox alignment="CENTER" layoutX="50.0" layoutY="331.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1.0" prefWidth="300.0" style="-fx-background-color: #151a2e;" />
+         </children>
+      </Pane>
+   </children>
+</HBox>
