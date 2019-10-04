@@ -5,7 +5,11 @@
  */
 package telas.relatorios;
 
+import algoritmos.naivebayes.naiveBayesAlgorithm;
 import componentes.grafico.atributos.graficoAtributosController;
+import componentes.grafico.estatisticas.graficoEstatisticasController;
+import componentes.grafico.graficoController;
+import componentes.info.InfoController;
 import componentes.linha.linhaGraficosController;
 import jankovicsandras.imagetracer.ImageTracer;
 import java.awt.image.BufferedImage;
@@ -33,6 +37,7 @@ import javafx.scene.SnapshotParameters;
 import javafx.scene.image.WritableImage;
 import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.transform.Transform;
 import javafx.stage.FileChooser;
@@ -52,6 +57,8 @@ import org.apache.poi.xwpf.usermodel.XWPFRun;
  */
 public class relatoriosController implements Initializable {
 
+    List<Double> relevanciaAux = new ArrayList<>();
+
     //private ;
     private List<WritableImage> listBais = new ArrayList<>();
 
@@ -62,6 +69,8 @@ public class relatoriosController implements Initializable {
 
     private List<Parent> linhasParent = new ArrayList<>();
     private List<linhaGraficosController> linhasController = new ArrayList<>();
+
+    public naiveBayesAlgorithm nb;
 
     private boolean canShowSingleOption;
 
@@ -75,61 +84,67 @@ public class relatoriosController implements Initializable {
 
     }
 
-    private void addUnicaLinhasEGrafico() throws IOException, Exception {
+    private void addUnicaLinhasEGrafico(List<String> listaNomesValores, List<Double> pegandoListaValorProb, List<Double> pegarListaValorNaive, List<Double> pegarListaDiffAtributos, List<Double> pegarListaDiffGeral, String listaNomesAtributo) throws IOException, Exception {
         FXMLLoader loader = new FXMLLoader();
         linhaGraficosController linhaGraficosController;
 
         Parent linhaGrafico = loader.load(getClass().getResource("/componentes/linha/index.fxml").openStream());
 
         linhaGraficosController = loader.getController();
-        linhaGraficosController.addLegendaEGraficos();
-        linhaGraficosController.addLegendaEGraficos();
-
-        linhaGraficosController.addLegendaEGraficos();
-        linhaGraficosController.addLegendaEGraficos();
-        linhaGraficosController.addLegendaEGraficos();
-
+        linhaGraficosController.addLegendaEGraficos(listaNomesValores, pegandoListaValorProb, pegarListaValorNaive, pegarListaDiffAtributos, pegarListaDiffGeral, listaNomesAtributo);
         linhaGraficosController.setCanShowSingleOption(canShowSingleOption);
 
         linhasParent.add(linhaGrafico);
 
         linhasController.add(linhaGraficosController);
 
+        //linhasController.add(0, linhaGraficosController);
         //listBais.add(linhaGraficosController.getBImage());
     }
 
     private void clearLinhas() {
         boxDosGraficos.getChildren().clear();
+        relevanciaAux.clear();
     }
 
     public void addLinhas() throws IOException, Exception {
         linhasParent.clear();
 
-        addUnicaLinhasEGrafico();
-        addUnicaLinhasEGrafico();
-        addUnicaLinhasEGrafico();
-        addUnicaLinhasEGrafico();
-        addUnicaLinhasEGrafico();
-        addUnicaLinhasEGrafico();
-        addUnicaLinhasEGrafico();
-        addUnicaLinhasEGrafico();
-        addUnicaLinhasEGrafico();
-        addUnicaLinhasEGrafico();
-        addUnicaLinhasEGrafico();
-        addUnicaLinhasEGrafico();
-        addUnicaLinhasEGrafico();
-        addUnicaLinhasEGrafico();
-        addUnicaLinhasEGrafico();
-        addUnicaLinhasEGrafico();
-        addUnicaLinhasEGrafico();
-        addUnicaLinhasEGrafico();
-        addUnicaLinhasEGrafico();
-        addUnicaLinhasEGrafico();
-        addUnicaLinhasEGrafico();
-        addUnicaLinhasEGrafico();
-        addUnicaLinhasEGrafico();
-        addUnicaLinhasEGrafico();
-        addUnicaLinhasEGrafico();
+       /* List<Double> aux = new ArrayList<>();
+        List<String> aux2 = new ArrayList<>();
+
+        for (int i = 0; i < nb.getListaNomesAtributos(false).size(); i++) {
+            for (int j = 0; j < aux.size(); j++) {
+                if (j == aux.size() - 1 && nb.pegarListaDiffGeral(i).get(0) < aux.get(j)) {
+                    aux.add(nb.pegarListaDiffGeral(i).get(0));
+                    aux2.add(nb.getListaNomesAtributos(false).get(i).toUpperCase());
+                }
+                if (nb.pegarListaDiffGeral(i).get(0) > aux.get(j)) {
+                    aux.add(j, nb.pegarListaDiffGeral(i).get(0));
+                    aux2.add(j, nb.getListaNomesAtributos(false).get(i).toUpperCase());
+                }
+            }
+            if (i == 0) {
+                aux.add(nb.pegarListaDiffGeral(i).get(0));
+                aux2.add(nb.getListaNomesAtributos(false).get(i).toUpperCase());
+            }
+        }*/
+
+        for (int i = 0; i < nb.getListaNomesAtributos(false).size(); i++) {
+            /*for (int j = 0; j < nb.getListaNomesAtributos(false).size(); j++) {
+                if (aux2.get(j).equals(nb.getListaNomesAtributos(false).get(i).toUpperCase())) {*/
+                    addUnicaLinhasEGrafico(
+                            nb.getListaNomesValores(i, false),
+                            nb.pegandoListaValorProb(i),
+                            nb.pegarListaValorNaive(i),
+                            nb.pegarListaDiffAtributos(i),
+                            nb.pegarListaDiffGeral(i),
+                            nb.getListaNomesAtributos(false).get(i).toUpperCase()
+                    );
+                }
+            /*}
+
+        }*/
 
         for (int i = 0; i < linhasParent.size(); i++) {
             boxDosGraficos.getChildren().add(linhasParent.get(i));
@@ -142,16 +157,26 @@ public class relatoriosController implements Initializable {
         //info
         FXMLLoader loader2 = new FXMLLoader();
         Parent info = loader2.load(getClass().getResource("/componentes/info/index.fxml").openStream());
+        InfoController infoController = loader2.getController();
+        infoController.UpdateInfoController(nb.getNomeArquivo(), nb.getNInstanciaArquivo(), nb.getNAtributoArquivo(), nb.getAtributoVariavelAlvoString(), nb.getAtributoValorAlvo());
         infoPane.getChildren().add(info);
 
-        //grafico
-        FXMLLoader loader = new FXMLLoader();
-        Parent Atributos = loader.load(getClass().getResource("/componentes/grafico/atributos/index.fxml").openStream());
-        graficoAtributosController atributosController = loader.getController();
+        List<String> cores = new ArrayList<>();
+        cores.clear();
+        cores.add("#f59342");
+        cores.add("#fae034");
+        cores.add("#7dfa34");
+        cores.add("#34f7c6");
+        cores.add("#7935f0");
 
-        infoPane.getChildren().add(Atributos);
+        //ESTATISTICAS
+        FXMLLoader loaderInfo = new FXMLLoader();
+        Parent grafico1 = loaderInfo.load(getClass().getResource("/componentes/grafico/index.fxml").openStream());
+        graficoController atributosController2 = loaderInfo.getController();
+        atributosController2.setDados(nb.pegarListValoresVariavelAlvo(), cores, nb.getListaNomesValores(nb.getAtributoVariavelAlvo(), true));
+        infoPane.getChildren().add(grafico1);
 
-        atributosController.setCanShowOptionPane(true);
+        atributosController2.setCanShowOptionPane(true);
 
     }
 
@@ -196,7 +221,7 @@ public class relatoriosController implements Initializable {
 
             run.addBreak();
         }
-        
+
         //choose pane
         String url;
 

@@ -35,7 +35,7 @@ public class Main extends Application {
         linhaGraficosController.addLegenda();
         linhaGraficosController.addLegenda();*/
         
-        /*relatoriosController relatorioController = loader.getController();
+       /* relatoriosController relatorioController = loader.getController();
         relatorioController.addLinhas();
         relatorioController.addInfos();*/
 
@@ -43,7 +43,7 @@ public class Main extends Application {
         
         
         Scene scene = new Scene(root);
-        //stage.resizableProperty().set(false);
+        stage.resizableProperty().set(false);
         stage.setScene(scene);
         stage.show();
     }

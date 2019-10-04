@@ -19,6 +19,8 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
@@ -76,49 +78,76 @@ public class linhaGraficosController implements Initializable {
         titleGeral.setText(title);
     }
 
-    private void addLegenda() throws IOException {
+    private void addLegenda(List<String> listaNomesValores) throws IOException {
+
+        List<String> cores = new ArrayList<>();
+        cores.clear();
+        cores.add("#f59342");
+        cores.add("#fae034");
+        cores.add("#7dfa34");
+        cores.add("#34f7c6");
+        cores.add("#7935f0");
 
         FXMLLoader loader = new FXMLLoader();
         Parent legenda = loader.load(getClass().getResource("/componentes/legenda/index.fxml").openStream());
 
         legendaController = loader.getController();
-        legendaController.addUnicaLegenda("MATHEUS", "#3275a8");
-        legendaController.addUnicaLegenda("MATHEUS", "#3275a8");
-        legendaController.addUnicaLegenda("MATHEUS", "#3275a8");
-        legendaController.addUnicaLegenda("MATHEUS", "#3275a8");
+
+        for (int i = 0; i < listaNomesValores.size(); i++) {
+            if (i >= cores.size()) {
+                legendaController.addUnicaLegenda(listaNomesValores.get(i), cores.get(i - cores.size()));
+            } else {
+                legendaController.addUnicaLegenda(listaNomesValores.get(i), cores.get(i));
+            }
+        }
 
         linhaGrafico.getChildren().add(legenda);
 
     }
 
-    private void addGraficos() throws IOException {
+    private void addGraficos(List<Double> pegandoListaValorProb, List<Double> pegarListaValorNaive, List<Double> pegarListaDiffAtributos, List<Double> pegarListaDiffGeral) throws IOException {
+
+        List<String> cores = new ArrayList<>();
+        cores.clear();
+        cores.add("#f59342");
+        cores.add("#fae034");
+        cores.add("#7dfa34");
+        cores.add("#34f7c6");
+        cores.add("#7935f0");
+
+        //ESTATISTICAS
         FXMLLoader loader = new FXMLLoader();
         Parent grafico1 = loader.load(getClass().getResource("/componentes/grafico/estatisticas/index.fxml").openStream());
         estatisticasController = loader.getController();
+        estatisticasController.setDados(pegandoListaValorProb, cores);
         linhaGrafico.getChildren().add(grafico1);
 
         FXMLLoader loader2 = new FXMLLoader();
         Parent grafico2 = loader2.load(getClass().getResource("/componentes/grafico/probabilidade/index.fxml").openStream());
         probabilidadeController = loader2.getController();
+        probabilidadeController.setDados(pegarListaValorNaive, cores);
         linhaGrafico.getChildren().add(grafico2);
 
         FXMLLoader loader3 = new FXMLLoader();
         Parent grafico3 = loader3.load(getClass().getResource("/componentes/grafico/relevanciaValores/index.fxml").openStream());
         relevanciaDoisController = loader3.getController();
+        relevanciaDoisController.setDados(pegarListaDiffAtributos, cores);
         linhaGrafico.getChildren().add(grafico3);
 
         FXMLLoader loader4 = new FXMLLoader();
         Parent grafico4 = loader4.load(getClass().getResource("/componentes/grafico/relevanciaGeral/index.fxml").openStream());
         relevanciaUmController = loader4.getController();
+        relevanciaUmController.setDados( pegarListaDiffGeral , "#ff003c");
         linhaGrafico.getChildren().add(grafico4);
 
     }
 
-    public void addLegendaEGraficos() throws IOException {
+    public void addLegendaEGraficos(List<String> listaNomesValores, List<Double> pegandoListaValorProb, List<Double> pegarListaValorNaive, List<Double> pegarListaDiffAtributos, List<Double> pegarListaDiffGeral, String listaNomesAtributo) throws IOException {
         linhaGrafico.getChildren().clear();
 
-        addLegenda();
-        addGraficos();
+        setTitleGeral(listaNomesAtributo);
+        addLegenda(listaNomesValores);
+        addGraficos(pegandoListaValorProb, pegarListaValorNaive, pegarListaDiffAtributos, pegarListaDiffGeral);
     }
 
     public void setCanShowSingleOption(boolean aux) {
@@ -265,4 +294,5 @@ public class linhaGraficosController implements Initializable {
 
         return null;
     }
+
 }

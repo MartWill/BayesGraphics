@@ -60,6 +60,14 @@ public class naiveBayesAlgorithm {
         return dados.classIndex();
     }
 
+    public String getAtributoVariavelAlvoString() {
+        return getListaNomesAtributos(true).get(dados.classIndex());
+    }
+
+    public String getAtributoValorAlvo() {
+        return getListaNomesValores(dados.classIndex(), true).get(numValorAlvo);
+    }
+
     public List<String> getListaNomesAtributos(boolean comVariavelAlvo) {
         List<String> listaNomesAtributos = new ArrayList<>();
 
@@ -104,4 +112,74 @@ public class naiveBayesAlgorithm {
         }
         return modeloNaiveCriado;
     }
+
+    public List<Double> pegandoListaValorProb(int numeroDoAtributo) {
+        List<Double> listaDeValores = new ArrayList<>();
+
+        for (int i = 0; i < getListaNomesValores(numeroDoAtributo, false).size(); i++) {
+            if (numeroDoAtributo < numAtributoAlvo) {
+                listaDeValores.add((double) dados.attributeStats(numeroDoAtributo).nominalCounts[i] / dados.size() * 100);
+            } else {
+                listaDeValores.add((double) dados.attributeStats(numeroDoAtributo + 1).nominalCounts[i] / dados.size() * 100);
+            }
+        }
+
+        return listaDeValores;
+    }
+
+    public List<Double> pegarListValoresVariavelAlvo() {
+        List<Double> listaDeValores = new ArrayList<>();
+
+        for (int i = 0; i < getListaNomesValores(numAtributoAlvo, true).size(); i++) {
+            listaDeValores.add((double) dados.attributeStats(numAtributoAlvo).nominalCounts[i] / dados.size() * 100);
+        }
+
+        return listaDeValores;
+    }
+
+    public List<Double> pegarListaValorNaive(int numeroDeAtributos) {
+        List<Double> listaValoresProb = new ArrayList<>();
+
+        for (int i = 0; i < getListaNomesValores(numeroDeAtributos, false).size(); i++) {
+            listaValoresProb.add(naive.getConditionalEstimators()[numeroDeAtributos][numValorAlvo].getProbability(i) * 100);
+        }
+
+        return listaValoresProb;
+    }
+
+    public List<Double> pegarListaDiffAtributos(int numeroDoAtributo) {
+        List<Double> listaDiffAtributo = new ArrayList<>();
+
+        for (int i = 0; i < pegandoListaValorProb(numeroDoAtributo).size(); i++) {
+            listaDiffAtributo.add(pegarListaValorNaive(numeroDoAtributo).get(i) - pegandoListaValorProb(numeroDoAtributo).get(i));
+        }
+
+        return listaDiffAtributo;
+    }
+
+    public List<Double> pegarListaDiffGeral(int numeroDoAtributo) {
+        List<Double> listaDiffAtributo = new ArrayList<>();
+        Double aux = new Double(0);
+
+        for (int i = 0; i < pegandoListaValorProb(numeroDoAtributo).size(); i++) {
+            aux += Math.abs(pegarListaValorNaive(numeroDoAtributo).get(i) - pegandoListaValorProb(numeroDoAtributo).get(i));
+        }
+
+        listaDiffAtributo.add(aux);
+        return listaDiffAtributo;
+    }
+
+    //nome do arquivo, n instancias, n atributos, atributo e valor
+    public String getNomeArquivo() {
+        return this.dados.relationName();
+    }
+
+    public int getNInstanciaArquivo() {
+        return this.dados.size();
+    }
+
+    public int getNAtributoArquivo() {
+        return this.getListaNomesAtributos(true).size();
+    }
+
 }

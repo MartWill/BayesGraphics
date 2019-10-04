@@ -1,0 +1,44 @@
+n_conhecimento,faixa_etaria,formacao_escolar,tempo_de_sevico,ultima_capacitacao
+constante,20 a 40 anos,ensino médio completo,>10anos & <19 anos,nunca recebeu
+constante,maior de 40 anos,ensino médio completo,>10anos & <19 anos, há 3 a 4 anos
+constante,20 a 40 anos,ensino médio completo,>10anos & <19 anos,há mais de 5 anos
+constante,maior de 40 anos,ensino médio completo,>10anos & <19 anos,há mais de 5 anos
+constante,maior de 40 anos,ensino médio completo,>10anos & <19 anos,há mais de 5 anos
+constante,maior de 40 anos,ensino médio completo,>10anos & <19 anos,há mais de 5 anos
+constante,maior de 40 anos,ensino médio completo,>10anos & <19 anos,há mais de 5 anos
+constante,20 a 40 anos,ensino médio completo,<10 anos,nunca recebeu
+constante,20 a 40 anos,ensino médio completo,<10 anos,nunca recebeu
+constante,20 a 40 anos,ensino superior completo,<10 anos, há 3 a 4 anos
+constante,maior de 40 anos,ensino médio completo,<10 anos,há mais de 5 anos
+constante,maior de 40 anos,ensino médio completo,<10 anos,há mais de 5 anos
+constante,20 a 40 anos,ensino superior completo,<10 anos,há mais de 5 anos
+constante,20 a 40 anos,ensino superior completo,,nunca recebeu
+constante,20 a 40 anos,ensino superior completo,,1 ano há 2 anos
+constante,20 a 40 anos,ensino superior completo,,1 ano há 2 anos
+constante,20 a 40 anos,ensino médio completo,,há mais de 5 anos
+aumentou,20 a 40 anos,ensino médio completo,>19 anos,nunca recebeu
+aumentou,maior de 40 anos,ensino superior completo,>19 anos,nunca recebeu
+aumentou,maior de 40 anos,ensino médio completo,>19 anos,1 ano há 2 anos
+aumentou,maior de 40 anos,ensino médio completo,>19 anos,há 3 a 4 anos
+aumentou,maior de 40 anos,ensino médio completo,>19 anos,há 3 a 4 anos
+aumentou,20 a 40 anos,ensino médio completo,>19 anos,há mais de 5 anos
+aumentou,maior de 40 anos,ensino médio completo,>19 anos,há mais de 5 anos
+aumentou,maior de 40 anos,ensino médio completo,>19 anos,há mais de 5 anos
+aumentou,maior de 40 anos,ensino médio completo,>19 anos,há mais de 5 anos
+aumentou,maior de 40 anos,ensino médio completo,>19 anos,há mais de 5 anos
+aumentou,maior de 40 anos,ensino médio completo,>19 anos,há mais de 5 anos
+aumentou,maior de 40 anos,ensino médio completo,>19 anos,há mais de 5 anos
+aumentou,maior de 40 anos,ensino superior completo,>19 anos,há mais de 5 anos
+aumentou,maior de 40 anos,ensino médio completo,>10anos & <19 anos,nunca recebeu
+aumentou,maior de 40 anos,ensino médio completo,>10anos & <19 anos,nunca recebeu
+aumentou,maior de 40 anos,ensino médio completo,>10anos & <19 anos,nunca recebeu
+aumentou,maior de 40 anos,ensino médio completo,>10anos & <19 anos,nunca recebeu
+aumentou,maior de 40 anos,ensino médio completo,>10anos & <19 anos,nunca recebeu
+aumentou,maior de 40 anos,ensino médio completo,>10anos & <19 anos,1 ano há 2 anos
+aumentou,maior de 40 anos,ensino médio completo,>10anos & <19 anos,1 ano há 2 anos
+aumentou,20 a 40 anos,ensino superior completo,>10anos & <19 anos,1 ano há 2 anos
+aumentou,maior de 40 anos,ensino superior completo,>10anos & <19 anos,1 ano há 2 anos
+aumentou,20 a 40 anos,ensino médio completo,>10anos & <19 anos, há 3 a 4 anos
+aumentou,maior de 40 anos,ensino médio completo,>10anos & <19 anos, há 3 a 4 anos
+aumentou,maior de 40 anos,ensino médio completo,>10anos & <19 anos, há 3 a 4 anos
+aumentou,20 a 40 anos,ensino superior completo,>10anos & <19 anos,há mais de 5 anos

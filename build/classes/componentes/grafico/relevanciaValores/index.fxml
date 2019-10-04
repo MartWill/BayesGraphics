@@ -29,10 +29,10 @@
                         </Label>
                         <BarChart fx:id="grafico" alternativeRowFillVisible="false" horizontalGridLinesVisible="false" prefHeight="200.0" prefWidth="300.0" verticalZeroLineVisible="false">
                           <xAxis>
-                            <CategoryAxis side="BOTTOM" />
+                            <CategoryAxis side="BOTTOM" tickLabelsVisible="false" tickMarkVisible="false" />
                           </xAxis>
                           <yAxis>
-                            <NumberAxis lowerBound="-75.0" side="LEFT" upperBound="75.0" />
+                            <NumberAxis autoRanging="false" lowerBound="-100.0" minorTickCount="50" side="LEFT" />
                           </yAxis>
                         </BarChart>
                      </children>

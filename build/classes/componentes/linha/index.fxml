@@ -14,7 +14,7 @@
          <children>
             <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Label fx:id="titleGeral" alignment="CENTER" contentDisplay="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="89.0" text="TITLE" textAlignment="CENTER" wrapText="true">
+                  <Label fx:id="titleGeral" alignment="CENTER" contentDisplay="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="30.0" text="TITLE" textAlignment="CENTER" wrapText="true">
                      <font>
                         <Font size="20.0" />
                      </font>

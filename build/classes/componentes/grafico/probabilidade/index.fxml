@@ -32,7 +32,7 @@
                             <CategoryAxis fx:id="categoriasEixo" endMargin="0.0" side="BOTTOM" startMargin="0.0" tickLabelsVisible="false" />
                           </xAxis>
                           <yAxis>
-                            <NumberAxis fx:id="numericoEixo" lowerBound="-20.0" minorTickCount="20" minorTickLength="3.0" side="LEFT" tickLabelGap="10.0" tickUnit="20.0" upperBound="75.0" />
+                            <NumberAxis fx:id="numericoEixo" autoRanging="false" lowerBound="-20.0" minorTickCount="20" minorTickLength="3.0" side="LEFT" tickLabelGap="10.0" tickUnit="20.0" />
                           </yAxis>
                         </BarChart>
                      </children>

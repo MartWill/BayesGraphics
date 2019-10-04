@@ -8,12 +8,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import telas.relatorios.relatoriosController;
 
 public class inicializacaoController {
 
@@ -77,14 +79,27 @@ public class inicializacaoController {
         nb.setNumValorAlvo(valorBox.getSelectionModel().getSelectedIndex());
         System.out.println("MODELO NAIVE CRIADO COM SUCESSO: " + nb.criarModeloNaive());
         System.out.println("NAIVE BAYES LOGS(FIM)");
-
+        
+        FXMLLoader loader = new FXMLLoader();
+        Parent root = loader.load(getClass().getResource("/telas/relatorios/index.fxml").openStream());
+        root.setVisible(true);
+        relatoriosController relatorioController = loader.getController();
+        
+        relatorioController.nb = nb;
+        
+        relatorioController.addLinhas();
+        relatorioController.addInfos();
+        Stage primaryStage = new Stage();
+        
+        primaryStage.setTitle("GRAFICOS NAIVE BAYES");
+        primaryStage.setScene(new Scene(root));
+        primaryStage.show();
     }
 
     @FXML
     private void ActionVariavelBox(ActionEvent event) {
         nb.setNumAtributoAlvo(variavelBox.getSelectionModel().getSelectedIndex());
         setValorBox(nb.getListaNomesValores(variavelBox.getSelectionModel().getSelectedIndex(), true));
-
     }
 
 }

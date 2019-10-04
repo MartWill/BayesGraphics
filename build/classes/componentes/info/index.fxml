@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefWidth="300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="componentes.info.IndexController">
+<VBox alignment="CENTER" prefWidth="300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="componentes.info.InfoController">
    <children>
       <Label text="BAYES GRAPHICS" textFill="WHITE">
          <font>
@@ -24,10 +24,13 @@
             <Insets />
          </VBox.margin>
       </Label>
-      <TextField editable="false" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="250.0" style="-fx-background-color: #151a2e; -fx-border-color: white;">
+      <TextField fx:id="NomeField" editable="false" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="250.0" style="-fx-background-color: #151a2e; -fx-border-color: white; -fx-text-fill: white;">
          <VBox.margin>
             <Insets />
-         </VBox.margin></TextField>
+         </VBox.margin>
+         <font>
+            <Font size="20.0" />
+         </font></TextField>
       <Label prefWidth="250.0" text="n° de INSTANCIAS" textFill="WHITE">
          <font>
             <Font name="Times New Roman" size="12.0" />
@@ -39,10 +42,13 @@
             <Insets top="10.0" />
          </padding>
       </Label>
-      <TextField editable="false" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="250.0" style="-fx-background-color: #151a2e; -fx-border-color: white;">
+      <TextField fx:id="NInstanciaField" editable="false" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="250.0" style="-fx-background-color: #151a2e; -fx-border-color: white; -fx-text-fill: white;">
          <VBox.margin>
             <Insets />
-         </VBox.margin></TextField>
+         </VBox.margin>
+         <font>
+            <Font size="20.0" />
+         </font></TextField>
       <Label prefWidth="250.0" text="n° de ATRIBUTOS" textFill="WHITE">
          <font>
             <Font name="Times New Roman" size="12.0" />
@@ -54,10 +60,13 @@
             <Insets top="10.0" />
          </padding>
       </Label>
-      <TextField editable="false" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="250.0" style="-fx-background-color: #151a2e; -fx-border-color: white;">
+      <TextField fx:id="NAtributoField" editable="false" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="250.0" style="-fx-background-color: #151a2e; -fx-border-color: white; -fx-text-fill: white;">
          <VBox.margin>
             <Insets />
-         </VBox.margin></TextField>
+         </VBox.margin>
+         <font>
+            <Font size="20.0" />
+         </font></TextField>
       <Label prefWidth="250.0" text="ATRIBUTO de estudo:" textFill="WHITE">
          <font>
             <Font name="Times New Roman" size="12.0" />
@@ -69,10 +78,13 @@
             <Insets top="10.0" />
          </padding>
       </Label>
-      <TextField editable="false" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="250.0" style="-fx-background-color: #151a2e; -fx-border-color: white;">
+      <TextField fx:id="AtributoField" editable="false" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="250.0" style="-fx-background-color: #151a2e; -fx-border-color: white; -fx-text-fill: white;">
          <VBox.margin>
             <Insets />
-         </VBox.margin></TextField>
+         </VBox.margin>
+         <font>
+            <Font size="20.0" />
+         </font></TextField>
       <Label prefWidth="250.0" text="VALOR inferido " textFill="WHITE">
          <font>
             <Font name="Times New Roman" size="12.0" />
@@ -84,10 +96,13 @@
             <Insets top="10.0" />
          </padding>
       </Label>
-      <TextField editable="false" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="250.0" style="-fx-background-color: #151a2e; -fx-border-color: white;">
+      <TextField fx:id="ValorField" editable="false" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="250.0" style="-fx-background-color: #151a2e; -fx-border-color: white; -fx-text-fill: white;">
          <VBox.margin>
             <Insets />
-         </VBox.margin></TextField>
+         </VBox.margin>
+         <font>
+            <Font size="20.0" />
+         </font></TextField>
    </children>
    <padding>
       <Insets bottom="30.0" />

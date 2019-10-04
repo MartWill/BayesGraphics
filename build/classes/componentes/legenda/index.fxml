@@ -16,7 +16,7 @@
                <children>
                   <Label text="Legenda:">
                      <font>
-                        <Font name="Times New Roman" size="12.0" />
+                        <Font name="Times New Roman" size="20.0" />
                      </font></Label>
                   <VBox fx:id="boxLegendas" alignment="CENTER">
                      <VBox.margin>
