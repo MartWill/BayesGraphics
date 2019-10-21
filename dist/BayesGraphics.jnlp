@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="BayesGraphics.jar" size="342974" download="eager" />
+    <jar href="BayesGraphics.jar" size="5532" download="eager" />
     <jar href="lib\ImageTracer.jar" size="15282" download="eager" />
     <jar href="lib\activation-1.1.1.jar" size="69409" download="eager" />
     <jar href="lib\commons-codec-1.12.jar" size="339669" download="eager" />
@@ -28,6 +28,6 @@
     <jar href="lib\weka.jar" size="11143484" download="eager" />
     <jar href="lib\xmlbeans-3.1.0.jar" size="2579738" download="eager" />
   </resources>
-  <jfx:javafx-desc  width="800" height="600" main-class="bayesgraphics.Main"  name="BayesGraphics" />
+  <jfx:javafx-desc  width="800" height="600" main-class="fb.bayesGraphics.Main"  name="BayesGraphics" />
   <update check="always"/>
 </jnlp>
