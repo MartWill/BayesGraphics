@@ -7,7 +7,10 @@ package fb.bayesGraphics.control;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.layout.VBox;
 
 /**
  * FXML Controller class
@@ -16,6 +19,11 @@ import javafx.fxml.Initializable;
  */
 public class BGWindowController implements Initializable {
 
+    @FXML
+    private VBox infoPane;
+    @FXML
+    private VBox boxDosGraficos;
+
     /**
      * Initializes the controller class.
      */
@@ -23,5 +31,25 @@ public class BGWindowController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    @FXML
+    private void MenuSalvarTudoPDF(ActionEvent event) {
+    }
+
+    @FXML
+    private void MenuSalvarTudoDOC(ActionEvent event) {
+    }
+
+    @FXML
+    private void MenuSalvarTudoJPG(ActionEvent event) {
+    }
+
+    @FXML
+    private void selecionarIndividualAction(ActionEvent event) {
+    }
+
+    @FXML
+    private void selecionarLinhasAction(ActionEvent event) {
+    }
     
 }

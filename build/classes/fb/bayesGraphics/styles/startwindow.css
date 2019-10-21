@@ -3,5 +3,21 @@
  */
 
 .mainFxmlClass {
+    -fx-alignment: top-center;
+    
+    
+     /*Tamanho padrão*/
+    -fx-max-height: -infinity;
+    -fx-max-width: -infinity;
+    -fx-min-height: -infinity;
+    -fx-min-width: -infinity;
+    
+
+    -fx-pref-height: 400;
+    -fx-pref-width: 800;
+       
+}
+
+.root{
 
 }

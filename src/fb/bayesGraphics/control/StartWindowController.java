@@ -7,7 +7,12 @@ package fb.bayesGraphics.control;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
 
 /**
  * FXML Controller class
@@ -16,6 +21,13 @@ import javafx.fxml.Initializable;
  */
 public class StartWindowController implements Initializable {
 
+    @FXML
+    private TextField dirLabel;
+    @FXML
+    private ComboBox<?> variavelBox;
+    @FXML
+    private ComboBox<?> valorBox;
+
     /**
      * Initializes the controller class.
      */
@@ -23,5 +35,18 @@ public class StartWindowController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    @FXML
+    private void ActionEscolher(ActionEvent event) {
+    }
+
+    @FXML
+    private void ActionVariavelBox(ActionEvent event) {
+    }
+
+    @FXML
+    private void ActionGerarAnalise(ActionEvent event) {
+    }
+
     
 }

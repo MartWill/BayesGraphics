@@ -14,13 +14,13 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        String urlLoader = "/fb/bayesGraphics/view/StartWindow.fxml";
+        String urlLoader = "/fb/bayesGraphics/view/BGWindow.fxml";
 
         FXMLLoader loader = new FXMLLoader();
         Parent root = loader.load(getClass().getResource(urlLoader).openStream());
 
         Scene scene = new Scene(root);
-        stage.resizableProperty().set(false);
+        //stage.resizableProperty().set(false);
         stage.setScene(scene);
         stage.show();
     }
