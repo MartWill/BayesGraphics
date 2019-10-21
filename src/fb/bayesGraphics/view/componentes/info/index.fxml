@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefWidth="300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="componentes.info.InfoController">
+   <children>
+      <Label text="BAYES GRAPHICS" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="31.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="20.0" top="20.0" />
+         </VBox.margin>
+      </Label>
+      <Label prefWidth="250.0" text="Nome do arquivo:" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman" size="12.0" />
+         </font>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </Label>
+      <TextField fx:id="NomeField" editable="false" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="250.0" style="-fx-background-color: #151a2e; -fx-border-color: white; -fx-text-fill: white;">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <font>
+            <Font size="20.0" />
+         </font></TextField>
+      <Label prefWidth="250.0" text="n° de INSTANCIAS" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman" size="12.0" />
+         </font>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </Label>
+      <TextField fx:id="NInstanciaField" editable="false" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="250.0" style="-fx-background-color: #151a2e; -fx-border-color: white; -fx-text-fill: white;">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <font>
+            <Font size="20.0" />
+         </font></TextField>
+      <Label prefWidth="250.0" text="n° de ATRIBUTOS" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman" size="12.0" />
+         </font>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </Label>
+      <TextField fx:id="NAtributoField" editable="false" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="250.0" style="-fx-background-color: #151a2e; -fx-border-color: white; -fx-text-fill: white;">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <font>
+            <Font size="20.0" />
+         </font></TextField>
+      <Label prefWidth="250.0" text="ATRIBUTO de estudo:" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman" size="12.0" />
+         </font>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </Label>
+      <TextField fx:id="AtributoField" editable="false" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="250.0" style="-fx-background-color: #151a2e; -fx-border-color: white; -fx-text-fill: white;">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <font>
+            <Font size="20.0" />
+         </font></TextField>
+      <Label prefWidth="250.0" text="VALOR inferido " textFill="WHITE">
+         <font>
+            <Font name="Times New Roman" size="12.0" />
+         </font>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </Label>
+      <TextField fx:id="ValorField" editable="false" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="250.0" style="-fx-background-color: #151a2e; -fx-border-color: white; -fx-text-fill: white;">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <font>
+            <Font size="20.0" />
+         </font></TextField>
+   </children>
+   <padding>
+      <Insets bottom="30.0" />
+   </padding>
+</VBox>

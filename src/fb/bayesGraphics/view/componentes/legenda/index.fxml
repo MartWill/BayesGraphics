@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="200.0" minWidth="-Infinity" onMouseEntered="#opcaoPaneOn" onMouseExited="#opcaoPaneOFF" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="componentes.legenda.legendaController">
+    <children>
+        <StackPane>
+            <children>
+            <VBox alignment="CENTER">
+               <children>
+                  <Label text="Legenda:">
+                     <font>
+                        <Font name="Times New Roman" size="20.0" />
+                     </font></Label>
+                  <VBox fx:id="boxLegendas" alignment="CENTER">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin></VBox>
+               </children>
+               <StackPane.margin>
+                  <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
+               </StackPane.margin>
+            </VBox>
+            <VBox fx:id="opcaoPane" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" visible="false" StackPane.alignment="CENTER">
+               <children>
+                        <Button mnemonicParsing="false" onAction="#copiarButton" prefHeight="25.0" prefWidth="52.0" text="copiar" />
+                        <Button mnemonicParsing="false" onAction="#salvarOneButton" prefHeight="25.0" prefWidth="74.0" text="salvar .png">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#salvarTwoButton" text="salvar .svg" />
+               </children>
+            </VBox>
+            </children>
+        </StackPane>
+    </children>
+</Pane>

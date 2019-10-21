@@ -80,12 +80,12 @@
                     <children>
                         <ImageView fitHeight="64.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@/fb/bayesGraphics/images/logo_ufpa.png" />
+                                <Image url="@/fb/bayesGraphics/util/images/logo_ufpa.png" />
                             </image>
                         </ImageView>
                         <ImageView fitHeight="52.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@/fb/bayesGraphics/images/fs-logo.png" />
+                        <Image url="@/fb/bayesGraphics/util/images/fs-logo.png" />
                      </image>
                         </ImageView>
                     </children>
