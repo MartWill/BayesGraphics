@@ -9,11 +9,12 @@ package fb.bayesGraphics.view.componentes.linha;
 import componentes.grafico.probabilidade.graficoProbabilidadeController;
 import componentes.grafico.relevanciaGeral.graficoRelevanciaUmController;
 import componentes.grafico.relevanciaValores.graficoRelevanciaDoisController;*/
-import componentes.legenda.legendaController;
+//import componentes.legenda.legendaController;
 import fb.bayesGraphics.view.componentes.grafico.estatisticas.graficoEstatisticasController;
 import fb.bayesGraphics.view.componentes.grafico.probabilidade.graficoProbabilidadeController;
 import fb.bayesGraphics.view.componentes.grafico.relevanciaGeral.graficoRelevanciaUmController;
 import fb.bayesGraphics.view.componentes.grafico.relevanciaValores.graficoRelevanciaDoisController;
+import fb.bayesGraphics.view.componentes.legenda.legendaController;
 import jankovicsandras.imagetracer.ImageTracer;
 import java.awt.image.BufferedImage;
 import java.io.BufferedWriter;
@@ -93,7 +94,7 @@ public class linhaGraficosController implements Initializable {
         cores.add("#7935f0");
 
         FXMLLoader loader = new FXMLLoader();
-        Parent legenda = loader.load(getClass().getResource("/componentes/legenda/index.fxml").openStream());
+        Parent legenda = loader.load(getClass().getResource("/fb/bayesGraphics/view/componentes/legenda/index.fxml").openStream());
 
         legendaController = loader.getController();
 
@@ -121,25 +122,25 @@ public class linhaGraficosController implements Initializable {
 
         //ESTATISTICAS
         FXMLLoader loader = new FXMLLoader();
-        Parent grafico1 = loader.load(getClass().getResource("/componentes/grafico/estatisticas/index.fxml").openStream());
+        Parent grafico1 = loader.load(getClass().getResource("/fb/bayesGraphics/view/componentes/grafico/estatisticas/index.fxml").openStream());
         estatisticasController = loader.getController();
         estatisticasController.setDados(pegandoListaValorProb, cores);
         linhaGrafico.getChildren().add(grafico1);
 
         FXMLLoader loader2 = new FXMLLoader();
-        Parent grafico2 = loader2.load(getClass().getResource("/componentes/grafico/probabilidade/index.fxml").openStream());
+        Parent grafico2 = loader2.load(getClass().getResource("/fb/bayesGraphics/view/componentes/grafico/probabilidade/index.fxml").openStream());
         probabilidadeController = loader2.getController();
         probabilidadeController.setDados(pegarListaValorNaive, cores);
         linhaGrafico.getChildren().add(grafico2);
 
         FXMLLoader loader3 = new FXMLLoader();
-        Parent grafico3 = loader3.load(getClass().getResource("/componentes/grafico/relevanciaValores/index.fxml").openStream());
+        Parent grafico3 = loader3.load(getClass().getResource("/fb/bayesGraphics/view/componentes/grafico/relevanciaValores/index.fxml").openStream());
         relevanciaDoisController = loader3.getController();
         relevanciaDoisController.setDados(pegarListaDiffAtributos, cores);
         linhaGrafico.getChildren().add(grafico3);
 
         FXMLLoader loader4 = new FXMLLoader();
-        Parent grafico4 = loader4.load(getClass().getResource("/componentes/grafico/relevanciaGeral/index.fxml").openStream());
+        Parent grafico4 = loader4.load(getClass().getResource("/fb/bayesGraphics/view/componentes/grafico/relevanciaGeral/index.fxml").openStream());
         relevanciaUmController = loader4.getController();
         relevanciaUmController.setDados( pegarListaDiffGeral , "#ff003c");
         linhaGrafico.getChildren().add(grafico4);

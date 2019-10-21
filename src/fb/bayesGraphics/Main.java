@@ -15,7 +15,8 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         String urlLoader = "/fb/bayesGraphics/view/StartWindow.fxml";
-
+        //String urlLoader = "/fb/bayesGraphics/view/componentes/grafico/atributos/index.fxml";
+            
         FXMLLoader loader = new FXMLLoader();
         Parent root = loader.load(getClass().getResource(urlLoader).openStream());
 

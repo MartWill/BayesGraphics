@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package componentes.legenda;
+package fb.bayesGraphics.view.componentes.legenda;
 
-import componentes.unicaLegenda.unicaLegendaController;
+//import componentes.unicaLegenda.unicaLegendaController;
+import fb.bayesGraphics.view.componentes.unicaLegenda.unicaLegendaController;
 import jankovicsandras.imagetracer.ImageTracer;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
@@ -63,7 +64,7 @@ public class legendaController implements Initializable {
     public void addUnicaLegenda(String title, String color) throws IOException {
         FXMLLoader loader = new FXMLLoader();
 
-        Parent unicaLegenda = loader.load(getClass().getResource("/componentes/unicaLegenda/index.fxml").openStream());
+        Parent unicaLegenda = loader.load(getClass().getResource("/fb/bayesGraphics/view/componentes/unicaLegenda/index.fxml").openStream());
 
         unicaLegendaController unicaLegendaController = loader.getController();
         unicaLegendaController.setIndexController(title, color);

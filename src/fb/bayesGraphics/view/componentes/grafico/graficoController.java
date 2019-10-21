@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package componentes.grafico;
+package fb.bayesGraphics.view.componentes.grafico;
 
 import jankovicsandras.imagetracer.ImageTracer;
 import java.awt.image.BufferedImage;
