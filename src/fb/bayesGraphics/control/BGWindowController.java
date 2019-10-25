@@ -1,19 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package fb.bayesGraphics.control;
 
 import algoritmos.naivebayes.naiveBayesAlgorithm;
 import fb.bayesGraphics.view.componentes.grafico.graficoController;
 import fb.bayesGraphics.view.componentes.info.InfoController;
-///import componentes.grafico.graficoController;
-//import componentes.info.InfoController;
 import fb.bayesGraphics.view.componentes.linha.linhaGraficosController;
-//import componentes.grafico.graficoController;
-//import componentes.info.InfoController;
-//import componentes.linha.linhaGraficosController;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -42,38 +32,31 @@ import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFRun;
 
-/**
- * FXML Controller class
- *
- * @author Maia
- */
 public class BGWindowController implements Initializable {
 
     List<Double> relevanciaAux = new ArrayList<>();
 
-    //private ;
-    private List<WritableImage> listBais = new ArrayList<>();
+    private final List<WritableImage> listBais;
 
     @FXML
     private VBox boxDosGraficos;
     @FXML
     private VBox infoPane;
 
-    private List<Parent> linhasParent = new ArrayList<>();
-    private List<linhaGraficosController> linhasController = new ArrayList<>();
+    private final List<Parent> linhasParent = new ArrayList<>();
+    private final List<linhaGraficosController> linhasController = new ArrayList<>();
 
     public naiveBayesAlgorithm nb;
 
     private boolean canShowSingleOption;
 
-    /**
-     * Initializes the controller class.
-     */
+    public BGWindowController() {
+        this.listBais = new ArrayList<>();
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
         clearLinhas();
-
     }
 
     private void addUnicaLinhasEGrafico(List<String> listaNomesValores, List<Double> pegandoListaValorProb, List<Double> pegarListaValorNaive, List<Double> pegarListaDiffAtributos, List<Double> pegarListaDiffGeral, String listaNomesAtributo) throws IOException, Exception {
