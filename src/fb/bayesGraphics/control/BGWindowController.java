@@ -158,7 +158,7 @@ public class BGWindowController implements Initializable {
         Parent grafico1 = loaderInfo.load(getClass().getResource("/fb/bayesGraphics/view/componentes/grafico/index.fxml").openStream());
         graficoController atributosController2 = loaderInfo.getController();
         atributosController2.setDados(nb.pegarListValoresVariavelAlvo(), cores, nb.getListaNomesValores(nb.getAtributoVariavelAlvo(), true));
-        infoPane.getChildren().add(grafico1);
+        //infoPane.getChildren().add(grafico1);
 
         atributosController2.setCanShowOptionPane(true);
 

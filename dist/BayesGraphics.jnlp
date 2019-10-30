@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="BayesGraphics.jar" size="348480" download="eager" />
+    <jar href="BayesGraphics.jar" size="348530" download="eager" />
     <jar href="lib\ImageTracer.jar" size="15282" download="eager" />
     <jar href="lib\activation-1.1.1.jar" size="69409" download="eager" />
     <jar href="lib\commons-codec-1.12.jar" size="339669" download="eager" />
