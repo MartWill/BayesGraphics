@@ -1,7 +1,3 @@
-/*Software de correlação de varivaies, utilizando API WEKA
-
-Criado por: Matheus Maia.
- */
 package fb.bayesGraphics;
 
 import javafx.application.Application;
