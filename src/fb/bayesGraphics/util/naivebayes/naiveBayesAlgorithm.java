@@ -162,7 +162,7 @@ public class naiveBayesAlgorithm {
         Double aux = new Double(0);
 
         for (int i = 0; i < pegandoListaValorProb(numeroDoAtributo).size(); i++) {
-            aux += Math.abs(pegarListaValorNaive(numeroDoAtributo).get(i) - pegandoListaValorProb(numeroDoAtributo).get(i));
+            aux += Math.abs(pegarListaValorNaive(numeroDoAtributo).get(i) - pegandoListaValorProb(numeroDoAtributo).get(i))/2;
         }
 
         listaDiffAtributo.add(aux);

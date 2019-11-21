@@ -133,7 +133,6 @@ public class BGWindowController implements Initializable {
             j =   novasPosicoes.get(i);
             boxDosGraficos.getChildren().add(linhasParent.get(j));
         }
-
     }
 
     public void addInfos() throws IOException {
@@ -169,7 +168,7 @@ public class BGWindowController implements Initializable {
     }
 
     @FXML
-    private void MenuSalvarTudoDOC(ActionEvent event) throws FileNotFoundException, IOException, Exception {
+    private void MenuSalvarTudoDOC() throws FileNotFoundException, IOException, Exception {
 
         XWPFDocument doc = new XWPFDocument();
 
@@ -198,8 +197,42 @@ public class BGWindowController implements Initializable {
          image = SwingFXUtils.fromFXImage(snapshot, null);
          run.addPicture(bufferedImagetoInputStrem(image), XWPFDocument.PICTURE_TYPE_PNG, "image file1", Units.toEMU(140), Units.toEMU(100)); // 200x200 pixels
          */
+        
+        //Lista com as relevancias
+        List<Double> relevancias = new ArrayList<>();
+        List<Integer> novasPosicoes = new ArrayList<>();
+        
+        for (int i = 0; i < nb.getListaNomesAtributos(false).size(); i++) {
+            relevancias.add(nb.pegarListaDiffGeral(i).get(0));
+            novasPosicoes.add(i);
+        }
+
+        double aux = 0f;
+        int aux2 = 0;
+
+        //Ordenar essa lista (crescente) (futuramente descrecente)
+        for (int i = 0; i < relevancias.size(); i++) {
+            for (int j = i; j < relevancias.size(); j++) {
+                if (relevancias.get(i) < relevancias.get(j)) {
+                    aux = relevancias.get(i);
+                    aux2 = novasPosicoes.get(i);
+                    
+                    relevancias.set(i, relevancias.get(j));
+                    novasPosicoes.set(i, novasPosicoes.get(j));
+
+                    relevancias.set(j, aux);
+                    novasPosicoes.set(j, aux2);
+
+                }
+            }
+        }
+
+        int j;
+        
         for (int i = 0; i < linhasParent.size(); i++) {
-            WritableImage snapshot = linhasController.get(i).getBImage(0);
+            j =   novasPosicoes.get(i);
+            
+            WritableImage snapshot = linhasController.get(j).getBImage(0);
             BufferedImage image = SwingFXUtils.fromFXImage(snapshot, null);
             run.addPicture(bufferedImagetoInputStrem(image), XWPFDocument.PICTURE_TYPE_PNG, "image file1", Units.toEMU(430), Units.toEMU(80)); // 200x200 pixels
 
